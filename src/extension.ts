@@ -178,12 +178,6 @@ export function activate(context: vscode.ExtensionContext) {
     refreshPickerBtn(pickerBtn);
     pickerBtn.show();
 
-    // Status bar: settings
-    const settingsBtn = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 99);
-    settingsBtn.text = '$(settings-gear)';
-    settingsBtn.tooltip = 'Manage theme library';
-    settingsBtn.command = 'themePicker.settings';
-    settingsBtn.show();
 
     const configListener = vscode.workspace.onDidChangeConfiguration(e => {
         if (e.affectsConfiguration('workbench.colorTheme')) {
@@ -308,7 +302,7 @@ export function activate(context: vscode.ExtensionContext) {
         }
     });
 
-    context.subscriptions.push(log, pickerBtn, settingsBtn, pickCmd, settingsCmd, configListener);
+    context.subscriptions.push(log, pickerBtn, pickCmd, settingsCmd, configListener);
 }
 
 export function deactivate() {}
