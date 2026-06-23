@@ -1,0 +1,35 @@
+{
+    "name": "theme-picker",
+    "displayName": "Theme Picker",
+    "description": "Switch between favorite color themes from the status bar",
+    "version": "0.0.1",
+    "publisher": "theme-picker",
+    "engines": {
+        "vscode": "^1.75.0"
+    },
+    "categories": ["Themes"],
+    "activationEvents": ["onStartupFinished"],
+    "main": "./out/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "themePicker.pick",
+                "title": "Theme Picker: Open Theme Picker"
+            },
+            {
+                "command": "themePicker.settings",
+                "title": "Theme Picker: Manage Theme Library"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.75.0",
+        "@types/node": "^18.x",
+        "typescript": "^5.0.0"
+    }
+}
